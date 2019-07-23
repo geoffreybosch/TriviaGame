@@ -15,20 +15,15 @@ var questions = [
         answers: ["To become a MemeLord", "To become the MemeLord of Mars.", "To become the MemeLord of Earth.", "To become the MemeLord of Earth & Mars."],
         rightChoice: "To become the MemeLord of Earth & Mars."}
 ]
-
 var timer
 var quizArea = $('.quiz')
-
 var rules = {
     right:0,
     wrong:0,
-    counter:50,
-    
+    counter:50, 
     timer:function(){
         rules.counter--;
-        if (rules.counter ==0){
-            alert('Time up!')
-        }
+        if (rules.counter ==0){alert('Time up!')}
         $("#countdown").text(rules.counter+ " Seconds");
     },
     go:function(){
@@ -46,7 +41,6 @@ var rules = {
           }
           quizArea.append("<br><button id='stop'>Stop</button>");
     },
-
     stop: function() {
         var inputs = quizArea.children("input:checked");
         for (var i = 0; i < inputs.length; i++) {
@@ -58,26 +52,16 @@ var rules = {
         }
         this.score();
       },
-    
     score: function() {
         clearInterval(timer);
-
-        $("#sub-wrapper h2").remove();
-
         quizArea.html("<h2>Congrats!</h2>");
         quizArea.append("<h3>Right Answers: " + this.right + "</h3>");
         quizArea.append("<h3>Wrong Answers: " + this.wrong + "</h3>");
     }
-
-
-
 }
-
 $(document).on("click", "#go", function() {
     rules.go();
-  });
-
-  $(document).on("click", "#stop", function() {
+});
+$(document).on("click", "#stop", function() {
     rules.stop();
-  });
-
+});
