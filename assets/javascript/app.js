@@ -42,6 +42,9 @@ var rules = {
           quizArea.append("<br><button id='stop'>Stop</button>");
     },
     stop: function() {
+        $(".quiz-timer").append(
+            "<h3> You completed the quiz with only</h3> <h3 id='countdown'>50 Seconds</h3><h3> left!</h3>"
+        )
         var inputs = quizArea.children("input:checked");
         for (var i = 0; i < inputs.length; i++) {
           if ($(inputs[i]).val() == questions[i].rightChoice) {
