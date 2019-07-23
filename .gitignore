@@ -25,7 +25,7 @@ Makefile.in
 /stamp-h1
 
 # https://www.gnu.org/software/libtool/
-
+/.DS_Store
 /ltmain.sh
 
 # http://www.gnu.org/software/texinfo
